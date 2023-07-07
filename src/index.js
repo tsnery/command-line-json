@@ -1,4 +1,4 @@
-import database from "../database.json" assert { type: "json" };
+import database from "../database.json";
 import Person from "./person.js";
 import { save } from "./repository.js";
 import TerminalController from "./terminalController.js";
