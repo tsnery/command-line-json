@@ -8,7 +8,7 @@ import Person from "./person.js";
 export default class TerminalController {
   constructor() {
     this.print = {};
-    this.data = {};
+    this.data = [];
     this.terminal = {};
   }
   initializeTerminal(database, language) {
@@ -31,6 +31,11 @@ export default class TerminalController {
 
   question(msg = "") {
     return new Promise((resolve) => this.terminal.question(msg, resolve));
+  }
+
+  updateTable(item) {
+    this.data.push(item);
+    this.print(chalkTable(this.getTableOptions(), this.data));
   }
 
   closeTerminal() {
